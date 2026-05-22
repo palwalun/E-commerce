@@ -26,12 +26,12 @@ pipeline{
        steps {
          withCredentials([usernamePassword(
              credentialsId: 'acr-creds',
-             usernameVariable: 'ACR_USER',
-             passwordVariable: 'ACR_PASS'
+             usernameVariable: 'ACR_USERNAME',
+             passwordVariable: 'ACR_PASSWORD'
          )]) {
              sh '''
-               echo $ACR_PASS | docker login $ACR_LOGIN_SERVER \
-               -u $ACR_USER --password-stdin
+               echo $ACR_PASSWORD | docker login $ACR_LOGIN_SERVER \
+               -u $ACR_USERNAME --password-stdin
              '''
            }
           }
