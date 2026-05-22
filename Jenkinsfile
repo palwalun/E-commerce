@@ -29,10 +29,7 @@ pipeline{
              usernameVariable: 'ACR_USERNAME',
              passwordVariable: 'ACR_PASSWORD'
          )]) {
-             sh '''
-               echo $ACR_PASSWORD | docker login $ACR_LOGIN_SERVER \
-               -u $ACR_USERNAME --password-stdin
-             '''
+             sh "echo \$ACR_PASSWORD | docker login \$ACR_LOGIN_SERVER -u \$ACR_USERNAME --password-stdin"
            }
           }
          }
