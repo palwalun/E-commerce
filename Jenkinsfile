@@ -7,7 +7,7 @@ pipeline{
 	    branch: 'master'
     }
    }
-   stage {
+   stage('Build stage'){
     steps{
 	 sh 'mvn clean package -Dskiptests'
 	}
