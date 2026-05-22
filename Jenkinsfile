@@ -17,6 +17,11 @@ pipeline{
 	 sh 'docker build -t e-comm .'
 	}
    }
+   stage('Deploy to K8s'){
+    steps{
+	 sh 'kubectl apply -f deployment.yml'
+	}
+   }
   
   }
 
