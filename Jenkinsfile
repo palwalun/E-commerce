@@ -12,6 +12,11 @@ pipeline{
 	 sh 'mvn clean package -DskipTests'
 	}
    }
+   stage('Build Image'){
+    steps{
+	 sh 'docker build -t e-comm .'
+	}
+   }
   
   }
 
