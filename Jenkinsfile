@@ -7,8 +7,11 @@ pipeline{
 	    branch: 'master'
     }
    }
-  
-  
+   stage {
+    steps{
+	 sh 'mvn clean package -Dskiptests'
+	}
+   }
   
   }
 
